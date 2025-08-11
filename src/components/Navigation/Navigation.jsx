@@ -10,9 +10,10 @@ export default function Navigation() {
       <NavLink className={styles.navlink} to="/">
         <TbDeviceLandlinePhone size="30px" />
       </NavLink>
-      <NavLink className={styles.navlink} to="/phonebook">
+      <NavLink className={styles.navlink} to="/contacts">
         Phonebook
       </NavLink>
+      examplepwd12345
     </nav>
   );
 }

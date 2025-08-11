@@ -13,6 +13,7 @@
 .username {
   display: inline-flex;
   font-size: 20px;
+  margin: 0;
   margin-right: 25px;
   color: chocolate;
 }

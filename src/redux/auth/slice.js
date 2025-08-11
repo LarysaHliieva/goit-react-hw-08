@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import { register, login, logout } from "./operations";
+
 // const handlePending = (state) => {
 //   state.loading = true;
 // };
@@ -19,6 +21,27 @@ const slice = createSlice({
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(register.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.token = action.token;
+        state.isLoggedIn = true;
+      })
+      .addCase(login.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.token = action.token;
+        state.isLoggedIn = true;
+      })
+      .addCase(logout.fulfilled, (state) => {
+        state.user = {
+          name: null,
+          email: null,
+        };
+        state.token = "";
+        state.isLoggedIn = false;
+      });
   },
 });
 

@@ -5,13 +5,17 @@ import HomePage from "../../pages/HomePage/HomePage";
 import PhonebookPage from "../../pages/PhonebookPage/PhonebookPage";
 import RegisterPage from "../../pages/RegistrationPage/RegistrationPage";
 import LoginPage from "../../pages/LoginPage/LoginPage";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 function App() {
   return (
     <Loyout>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/phonebook" element={<PhonebookPage />} />
+        <Route
+          path="/contacts"
+          element={<PrivateRoute component={<PhonebookPage />} />}
+        />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>

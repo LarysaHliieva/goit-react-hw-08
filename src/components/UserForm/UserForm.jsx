@@ -9,15 +9,17 @@ export default function UserForm({
   initialValues,
   FeedbackSchema,
   textButton,
+  handleSubmit,
 }) {
-  const handleSubmit = (values, action) => {
-    console.log(values);
+  const onSubmit = (values, action) => {
+    handleSubmit(values);
+    action.resetForm();
   };
 
   return (
     <Formik
       initialValues={initialValues}
-      onSubmit={handleSubmit}
+      onSubmit={onSubmit}
       validationSchema={FeedbackSchema}
     >
       {({ submitCount }) => (

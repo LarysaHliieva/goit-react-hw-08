@@ -1,13 +1,23 @@
+import { useDispatch } from "react-redux";
+
+import { login } from "../../redux/auth/operations";
+
 import * as Yup from "yup";
 
 import UserForm from "../../components/UserForm/UserForm";
 
 export default function LoginPage() {
+  const dispatch = useDispatch();
+
+  const loginSubmit = (values) => {
+    dispatch(login(values));
+  };
+
   const FeedbackLoginSchema = Yup.object().shape({
     email: Yup.string().email("Must be a valid email!").required("Required"),
     password: Yup.string()
-      .min(5, "Too short")
-      .max(10, "Too long")
+      .min(7, "Too short")
+      .max(20, "Too long")
       .required("Required"),
   });
 
@@ -29,6 +39,7 @@ export default function LoginPage() {
       initialValues={initialLoginValues}
       FeedbackSchema={FeedbackLoginSchema}
       textButton="Log in"
+      handleSubmit={loginSubmit}
     />
   );
 }

@@ -1,8 +1,18 @@
+import { useDispatch } from "react-redux";
+
+import { register } from "../../redux/auth/operations";
+
 import * as Yup from "yup";
 
 import UserForm from "../../components/UserForm/UserForm";
 
 export default function RegistrationPage() {
+  const dispatch = useDispatch();
+
+  const registerSubmit = (values) => {
+    dispatch(register(values));
+  };
+
   const FeedbackRegisterSchema = Yup.object().shape({
     name: Yup.string()
       .min(2, "Too Short!")
@@ -10,8 +20,8 @@ export default function RegistrationPage() {
       .required("Required"),
     email: Yup.string().email("Must be a valid email!").required("Required"),
     password: Yup.string()
-      .min(5, "Too short")
-      .max(10, "Too long")
+      .min(7, "Too short")
+      .max(20, "Too long")
       .required("Required"),
   });
 
@@ -38,6 +48,7 @@ export default function RegistrationPage() {
       initialValues={initialRegisterValues}
       FeedbackSchema={FeedbackRegisterSchema}
       textButton="Register"
+      handleSubmit={registerSubmit}
     />
   );
 }
