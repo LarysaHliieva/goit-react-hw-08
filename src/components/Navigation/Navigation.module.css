@@ -1,0 +1,15 @@
+.navlink {
+  display: inline-flex;
+  color: olive;
+  font-size: 24px;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav :global(.active) {
+  color: hsl(60, 100%, 40%);
+}
+
+.navlink:hover {
+  color: hsl(60, 100%, 40%);
+}
