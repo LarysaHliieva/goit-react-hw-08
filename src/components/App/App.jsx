@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 
 import Loyout from "../Loyout/Loyout";
@@ -8,7 +10,14 @@ import LoginPage from "../../pages/LoginPage/LoginPage";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import RestrictedRoute from "../RestrictedRoute/RestrictedRoute";
 
+import { refreshUser } from "../../redux/auth/operations";
+
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(refreshUser);
+  }, [dispatch]);
+
   return (
     <Loyout>
       <Routes>
