@@ -26,12 +26,12 @@ const slice = createSlice({
     builder
       .addCase(register.fulfilled, (state, action) => {
         state.user = action.payload.user;
-        // state.token = action.token;
+        state.token = action.token;
         state.isLoggedIn = true;
       })
       .addCase(login.fulfilled, (state, action) => {
         state.user = action.payload.user;
-        // state.token = action.token;
+        state.token = action.token;
         state.isLoggedIn = true;
       })
       .addCase(logout.fulfilled, (state) => {
@@ -39,7 +39,7 @@ const slice = createSlice({
           name: null,
           email: null,
         };
-        state.token = "";
+        state.token = null;
         state.isLoggedIn = false;
       });
   },
