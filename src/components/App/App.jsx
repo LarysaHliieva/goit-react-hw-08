@@ -6,6 +6,7 @@ import PhonebookPage from "../../pages/PhonebookPage/PhonebookPage";
 import RegisterPage from "../../pages/RegistrationPage/RegistrationPage";
 import LoginPage from "../../pages/LoginPage/LoginPage";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import RestrictedRoute from "../RestrictedRoute/RestrictedRoute";
 
 function App() {
   return (
@@ -16,8 +17,16 @@ function App() {
           path="/contacts"
           element={<PrivateRoute component={<PhonebookPage />} />}
         />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/register"
+          element={<RestrictedRoute component={<RegisterPage />} />}
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute component={<LoginPage />} redirectTo="/contacts" />
+          }
+        />
       </Routes>
     </Loyout>
   );
