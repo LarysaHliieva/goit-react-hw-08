@@ -28,7 +28,6 @@ export const login = createAsyncThunk(
         "https://connections-api.goit.global/users/login",
         values
       );
-      console.log(res.data.token);
       axios.defaults.headers.common.Authorization = `Bearer ${res.data.token}`;
       return res.data;
     } catch (e) {
@@ -55,7 +54,6 @@ export const refreshUser = createAsyncThunk(
       const res = await axios.get(
         "https://connections-api.goit.global/users/current"
       );
-      console.log(res.data);
       return res.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

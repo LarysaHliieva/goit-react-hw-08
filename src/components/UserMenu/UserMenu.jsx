@@ -15,9 +15,10 @@ export default function UserMenu() {
   };
 
   const user = useSelector(selectUser);
+
   return (
     <div>
-      <p className={styles.username}>{user.name}</p>
+      <p className={styles.username}>{user?.name}</p>
       <Button text="Logout" onClick={handleLogout}></Button>
     </div>
   );
