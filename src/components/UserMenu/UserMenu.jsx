@@ -6,7 +6,7 @@ export default function UserMenu() {
   return (
     <div>
       <p className={styles.username}>username</p>
-      <Button text="Вихід"></Button>
+      <Button text="Logout"></Button>
     </div>
   );
 }
