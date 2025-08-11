@@ -8,6 +8,7 @@ export default function UserForm({
   formConfig,
   initialValues,
   FeedbackSchema,
+  textButton,
 }) {
   const handleSubmit = (values, action) => {
     console.log(values);
@@ -39,7 +40,7 @@ export default function UserForm({
             </div>
           ))}
 
-          <Button type="submit" text="Register" className={styles.btnForm} />
+          <Button type="submit" text={textButton} className={styles.btnForm} />
         </Form>
       )}
     </Formik>

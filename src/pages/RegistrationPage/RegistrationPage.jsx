@@ -37,6 +37,7 @@ export default function RegistrationPage() {
       formConfig={formRegisterConfig}
       initialValues={initialRegisterValues}
       FeedbackSchema={FeedbackRegisterSchema}
+      textButton="Register"
     />
   );
 }

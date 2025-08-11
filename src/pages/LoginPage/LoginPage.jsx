@@ -28,6 +28,7 @@ export default function LoginPage() {
       formConfig={formLoginConfig}
       initialValues={initialLoginValues}
       FeedbackSchema={FeedbackLoginSchema}
+      textButton="Log in"
     />
   );
 }
