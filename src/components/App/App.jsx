@@ -15,7 +15,7 @@ import { refreshUser } from "../../redux/auth/operations";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(refreshUser);
+    dispatch(refreshUser());
   }, [dispatch]);
 
   return (
