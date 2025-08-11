@@ -1,11 +1,11 @@
 import Button from "../Button/Button";
 
-import css from "./UserMenu.module.css";
+import styles from "./UserMenu.module.css";
 
 export default function UserMenu() {
   return (
     <div>
-      <p className={css.username}>username</p>
+      <p className={styles.username}>username</p>
       <Button text="Вихід"></Button>
     </div>
   );

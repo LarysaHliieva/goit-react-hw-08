@@ -12,7 +12,9 @@ import ContactList from "../../components/ContactList/ContactList";
 import { selectLoading } from "../../redux/contacts/selectors";
 import { fetchContacts } from "../../redux/contacts/operations";
 
-export default function Phonebook() {
+import styles from "./PhonebookPage.module.css";
+
+export default function PhonebookPage() {
   const loading = useSelector(selectLoading);
 
   const dispatch = useDispatch();
@@ -22,7 +24,7 @@ export default function Phonebook() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className={styles.phonebook}>
       <ContactForm />
       <SearchBox />
       {loading && <CircularProgress color="success" />}

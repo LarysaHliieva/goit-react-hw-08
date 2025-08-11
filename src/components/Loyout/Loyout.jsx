@@ -1,9 +1,9 @@
 import AppBar from "../AppBar/AppBar";
-import css from "./Loyout.module.css";
+import styles from "./Loyout.module.css";
 
 export default function Loyout({ children }) {
   return (
-    <div className={css.container}>
+    <div className={styles.container}>
       <AppBar />
       {children}
     </div>

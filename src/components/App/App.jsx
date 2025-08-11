@@ -2,18 +2,18 @@ import { Routes, Route } from "react-router-dom";
 
 import Loyout from "../Loyout/Loyout";
 import HomePage from "../../pages/HomePage/HomePage";
-import Phonebook from "../../pages/Phonebook/Phonebook";
-import Register from "../../pages/RegistrationPage/RegistrationPage";
-import Login from "../../pages/LoginPage/LoginPage";
+import PhonebookPage from "../../pages/PhonebookPage/PhonebookPage";
+import RegisterPage from "../../pages/RegistrationPage/RegistrationPage";
+import LoginPage from "../../pages/LoginPage/LoginPage";
 
 function App() {
   return (
     <Loyout>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/phonebook" element={<Phonebook />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/phonebook" element={<PhonebookPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Loyout>
   );
