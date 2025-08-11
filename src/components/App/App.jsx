@@ -12,10 +12,11 @@ function App() {
     <Loyout>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route
+        {/* <Route
           path="/contacts"
           element={<PrivateRoute component={<PhonebookPage />} />}
-        />
+        /> */}
+        <Route path="/contacts" element={<PhonebookPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>

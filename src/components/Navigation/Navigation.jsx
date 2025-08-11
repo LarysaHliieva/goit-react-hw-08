@@ -13,7 +13,6 @@ export default function Navigation() {
       <NavLink className={styles.navlink} to="/contacts">
         Phonebook
       </NavLink>
-      examplepwd12345
     </nav>
   );
 }

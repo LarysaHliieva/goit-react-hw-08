@@ -26,12 +26,12 @@ const slice = createSlice({
     builder
       .addCase(register.fulfilled, (state, action) => {
         state.user = action.payload.user;
-        state.token = action.token;
+        // state.token = action.token;
         state.isLoggedIn = true;
       })
       .addCase(login.fulfilled, (state, action) => {
         state.user = action.payload.user;
-        state.token = action.token;
+        // state.token = action.token;
         state.isLoggedIn = true;
       })
       .addCase(logout.fulfilled, (state) => {
