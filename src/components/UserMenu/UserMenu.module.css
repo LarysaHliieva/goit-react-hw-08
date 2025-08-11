@@ -6,10 +6,12 @@
   padding: 10px;
 }
 
-nav :global(.active) {
+.navlink:hover {
   color: hsl(60, 100%, 40%);
 }
 
-.navlink:hover {
-  color: hsl(60, 100%, 40%);
+.username {
+  display: inline-flex;
+  font-size: 20px;
+  margin-right: 25px;
 }
