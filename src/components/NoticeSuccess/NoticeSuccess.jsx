@@ -5,11 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
-import { selectError } from "../../redux/contacts/selectors";
-import { clearError } from "../../redux/contacts/slice";
+import { selectSuccess } from "../../redux/contacts/selectors";
+import { clearSucess } from "../../redux/contacts/slice";
 
-export default function NoticeError() {
-  const error = useSelector(selectError);
+export default function NoticeSuccess() {
+  const error = useSelector(selectSuccess);
   const [open, setOpen] = useState(false);
 
   const dispatch = useDispatch();
@@ -26,14 +26,14 @@ export default function NoticeError() {
     }
 
     setOpen(false);
-    dispatch(clearError());
+    dispatch(clearSucess());
   };
 
   return (
     <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
       <Alert
         onClose={handleClose}
-        severity="error"
+        severity="success"
         variant="filled"
         sx={{ width: "100%" }}
       >

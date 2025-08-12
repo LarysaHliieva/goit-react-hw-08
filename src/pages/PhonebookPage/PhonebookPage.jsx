@@ -7,6 +7,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import NoticeError from "../../components/NoticeError/NoticeError";
+import NoticeSuccess from "../../components/NoticeSuccess/NoticeSuccess";
 import ContactList from "../../components/ContactList/ContactList";
 
 import { selectLoading } from "../../redux/contacts/selectors";
@@ -29,6 +30,7 @@ export default function PhonebookPage() {
       <SearchBox />
       {loading && <CircularProgress color="success" />}
       <NoticeError />
+      <NoticeSuccess />
       <ContactList />
     </div>
   );
